@@ -11,4 +11,8 @@ __version__ = '1.0'
 __date__ = '4/8/2024'
 __status__ = 'Development'
 
+from password_validator import PasswordValidator
 
+
+if __name__ == '__main__':
+    PasswordValidator
