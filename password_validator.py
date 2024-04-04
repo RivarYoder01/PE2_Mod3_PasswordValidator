@@ -38,6 +38,9 @@ class PasswordValidator:
     def validate_upper_case(self):
         pass
 
+    def __str__(self):
+        return self._password
+
     def is_valid(self, password):
         """
 

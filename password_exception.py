@@ -6,5 +6,5 @@ class PasswordException(Exception):
         :param password:
         """
 
-        Exception.__init__(self)
+        Exception.__init__(self, message)
         self.password = password

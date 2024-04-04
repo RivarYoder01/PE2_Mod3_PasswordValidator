@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="851f73a8-29a3-4ce5-bb39-f8a2478abb05" name="Changes" comment="Added password_validator, adv_pwd_validator, and password_exception. Followed inclass lecture to start each file">
+    <list default="true" id="851f73a8-29a3-4ce5-bb39-f8a2478abb05" name="Changes" comment="Corrected the password_tester to be nearly functional. Line 42 has an attribute error. Coded the lowercase validation and is_valid in password_validator and Password Exception in password_exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adv_pwd_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/adv_pwd_validator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password_tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_tester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_validator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +31,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "Python.password_tester.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.password_tester.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.password_tester">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PE2_Mod3_PasswordValidator" />
@@ -142,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712072053619</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Corrected the password_tester to be nearly functional. Line 42 has an attribute error. Coded the lowercase validation and is_valid in password_validator and Password Exception in password_exception">
+      <option name="closed" value="true" />
+      <created>1712195821335</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712195821335</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -151,6 +156,7 @@
     <MESSAGE value="testing commit and push" />
     <MESSAGE value="Added Shebang, Opening doc string, and meta data" />
     <MESSAGE value="Added password_validator, adv_pwd_validator, and password_exception. Followed inclass lecture to start each file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added password_validator, adv_pwd_validator, and password_exception. Followed inclass lecture to start each file" />
+    <MESSAGE value="Corrected the password_tester to be nearly functional. Line 42 has an attribute error. Coded the lowercase validation and is_valid in password_validator and Password Exception in password_exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected the password_tester to be nearly functional. Line 42 has an attribute error. Coded the lowercase validation and is_valid in password_validator and Password Exception in password_exception" />
   </component>
 </project>
