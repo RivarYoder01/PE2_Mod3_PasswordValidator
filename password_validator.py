@@ -59,6 +59,20 @@ class PasswordValidator:
             error = f"Required {self._digit_min} digits but only contains {char_count}"
             raise PasswordException(error, self._password)
 
+    def __validate_symbols(self):
+        """
+
+        Asked ChatGPT to see how we can check for a symbol.
+        https://chat.openai.com/share/14f25fec-41c0-4999-b1c4-7619f03f52a6
+        :return:
+        """
+
+        char_count = sum(1 for char in self._password if not char.isalnum())
+
+        if char_count < self._symbol_min:
+            error = f"Required {self._symbol_min} symbols but only contains {char_count}"
+            raise PasswordException(error, self._password)
+
     def __str__(self):
         return self._password
 
@@ -85,6 +99,11 @@ class PasswordValidator:
 
         try:
             self.__validate_digit()
+        except PasswordException as e:
+            self._errors.append(e)
+
+        try:
+            self.__validate_symbols()
         except PasswordException as e:
             self._errors.append(e)
 
