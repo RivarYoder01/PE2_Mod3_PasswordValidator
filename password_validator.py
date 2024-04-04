@@ -47,6 +47,18 @@ class PasswordValidator:
             error = f"Required {self._uppercase_min} uppercase letters but only contains {char_count}"
             raise PasswordException(error, self._password)
 
+    def __validate_digit(self):
+        """
+
+        :return:
+        """
+
+        char_count = sum(1 for char in self._password if char.isnumeric() and char.isnumeric())
+
+        if char_count < self._digit_min:
+            error = f"Required {self._digit_min} digits but only contains {char_count}"
+            raise PasswordException(error, self._password)
+
     def __str__(self):
         return self._password
 
@@ -68,6 +80,11 @@ class PasswordValidator:
 
         try:
             self.__validate_uppercase()
+        except PasswordException as e:
+            self._errors.append(e)
+
+        try:
+            self.__validate_digit()
         except PasswordException as e:
             self._errors.append(e)
 
