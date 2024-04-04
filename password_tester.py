@@ -32,7 +32,7 @@ def default_validator():
     :return:
     """
 
-    passwords = ("AAaa11!!", "Abb12!!", "AAb12!", "AAbb1", "AAbb12!", "b!")
+    passwords = ("AAaa11!!", "Abb12!!", "AAb12!", "AAbb1", "AAbb12!", "b!", "bb")
     pv = PasswordValidator()
 
     for p in passwords:

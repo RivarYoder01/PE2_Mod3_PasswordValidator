@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="851f73a8-29a3-4ce5-bb39-f8a2478abb05" name="Changes" comment="Corrected the password_tester to be nearly functional. Line 42 has an attribute error. Coded the lowercase validation and is_valid in password_validator and Password Exception in password_exception">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="851f73a8-29a3-4ce5-bb39-f8a2478abb05" name="Changes" comment="Got validate lowercase functional with a message">
+      <change beforePath="$PROJECT_DIR$/password_tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_tester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/password_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_validator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712195821335</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Got validate lowercase functional with a message">
+      <option name="closed" value="true" />
+      <created>1712242681454</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712242681454</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -157,6 +166,7 @@
     <MESSAGE value="Added Shebang, Opening doc string, and meta data" />
     <MESSAGE value="Added password_validator, adv_pwd_validator, and password_exception. Followed inclass lecture to start each file" />
     <MESSAGE value="Corrected the password_tester to be nearly functional. Line 42 has an attribute error. Coded the lowercase validation and is_valid in password_validator and Password Exception in password_exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected the password_tester to be nearly functional. Line 42 has an attribute error. Coded the lowercase validation and is_valid in password_validator and Password Exception in password_exception" />
+    <MESSAGE value="Got validate lowercase functional with a message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got validate lowercase functional with a message" />
   </component>
 </project>
