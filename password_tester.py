@@ -45,4 +45,4 @@ def default_validator():
 
 
 if __name__ == '__main__':
-    default_validator
+    default_validator()

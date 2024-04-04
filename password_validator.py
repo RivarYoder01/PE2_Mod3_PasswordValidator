@@ -19,6 +19,9 @@ class PasswordValidator:
 
         self._errors = []
 
+    def get_errors(self):
+        return self._errors
+
     def __validate_lowercase(self):
         """
 
