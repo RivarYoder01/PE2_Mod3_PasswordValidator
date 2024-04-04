@@ -1,5 +1,6 @@
 from password_exception import PasswordException
 
+
 class AdvPasswordValidator:
     def __init__(self):
         pass

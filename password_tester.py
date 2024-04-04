@@ -13,10 +13,27 @@ __status__ = 'Development'
 
 from password_validator import PasswordValidator
 
-def default_validator():
 
-    passwords = ("AAaa11!!")
-    pv = PasswordValidator
+def display_errors(pw):
+    """
+
+    :param pw:
+    :return:
+    """
+    print(f'{pw} is an invalid password')
+
+    for e in pw.get_errors():
+        print(e)
+
+
+def default_validator():
+    """
+
+    :return:
+    """
+
+    passwords = ("AAaa11!!", "Abb12!!", "AAb12!", "AAbb1", "AAbb12!", "b!")
+    pv = PasswordValidator()
 
     for p in passwords:
         if pv.is_valid(p):
@@ -26,5 +43,6 @@ def default_validator():
 
         print()
 
+
 if __name__ == '__main__':
-    default_validator()
+    default_validator
