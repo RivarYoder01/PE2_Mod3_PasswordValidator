@@ -22,6 +22,9 @@ class PasswordValidator:
     def get_errors(self):
         return self._errors
 
+    def __str__(self):
+        return self._password
+
     def __validate_lowercase(self):
         """
 
@@ -72,9 +75,6 @@ class PasswordValidator:
         if char_count < self._symbol_min:
             error = f"Required {self._symbol_min} symbols but only contains {char_count}"
             raise PasswordException(error, self._password)
-
-    def __str__(self):
-        return self._password
 
     def is_valid(self, password):
         """
