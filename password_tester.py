@@ -9,7 +9,7 @@ they contain two capitol letters, lower case letters, numbers, and symbols.
 
 advanced_validator runs the same previous conditions as well as a min-max length of 8 and 12 respectfully.
 
-If the password passes a passing message is ran. If they do not pass, an exception is raised to tell the user why the
+If the password passes a passing message is run. If they do not pass, an exception is raised to tell the user why the
 password doesn't work.
 
 GitHub URL: https://github.com/RivarYoder01/PE2_Mod3_PasswordValidator
@@ -101,6 +101,3 @@ if __name__ == '__main__':
     print('=' * DASH_LENGTH)
     print('Goodbye! :D')
     print('=' * DASH_LENGTH)
-
-
-

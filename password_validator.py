@@ -12,19 +12,28 @@ class PasswordValidator:
         :param symbol_min:
         """
 
-        # assigns each parameter to objects that are attached to self
         self._password = None
+        self._errors = []  # Empty list that will store the errors found
+
+        # assigns each parameter to objects that are attached to self
         self._lowercase_min = lowercase_min
         self._uppercase_min = uppercase_min
         self._digit_min = digit_min
         self._symbol_min = symbol_min
 
-        self._errors = []  # Empty list that will store the errors found
-
     def get_errors(self):
+        """
+
+        :return:
+        """
         return self._errors
 
     def __str__(self):
+        """
+        Coverts password into a string
+
+        :return:
+        """
         return self._password
 
     def __validate_lowercase(self):
@@ -85,12 +94,14 @@ class PasswordValidator:
 
     def is_valid(self, password):
         """
+        Runs each subclass above to check each parameter using a series of try excepts. If returned false, the error
+        will be stored.
 
         :param password:
         :return:
         """
 
-        self._password = password
+        self._password = password  # Pulls in password to be checked
         self._errors.clear()  # Clears all stored errors
 
         try:  # Tests password for if it contains at least two lowercase letters
@@ -113,7 +124,7 @@ class PasswordValidator:
         except PasswordException as e:
             self._errors.append(e)
 
-        if len(self._errors) == 0:  #
+        if len(self._errors) == 0:
             return True
         else:
             return False

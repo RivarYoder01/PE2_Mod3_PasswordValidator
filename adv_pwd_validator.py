@@ -4,20 +4,35 @@ from password_exception import PasswordException
 class AdvPasswordValidator:
     def __init__(self, char_min=8, char_max=12):
         """
+        Defines the minimum and maximum character limit and which symbols can be used
 
         :param char_min:
         :param char_max:
         """
 
         self._password = None
+        self._errors = []  # Empty list that will store the errors found
 
+        # assigns each parameter to objects that are attached to self
         self._char_min = char_min
         self._char_max = char_max
 
-        self._errors = []
+    def get_errors(self):
+        return self._errors
+
+    def __str__(self):
+        """
+        Coverts password into a string
+
+        :return:
+        """
+        return self._password
 
     def __validate_length(self):
         """
+        char_count is used to track how many characters are in the string. If there are MORE than 8 characters then a
+        custom minimum limit error is thrown. If there are LESS than 8 characters then a custom maximum limit error
+        is thrown.
 
         :return:
         """
@@ -35,26 +50,21 @@ class AdvPasswordValidator:
     def validate_specific_symbol(self, password):
         pass
 
-    def get_errors(self):
-        return self._errors
-
-    def __str__(self):
-        return self._password
-
     def is_valid(self, password):
         """
+        Runs each subclass above to check each parameter using a series of try excepts. If returned false, the error
+        will be stored.
 
         :param password:
         :return:
         """
 
-        self._password = password
+        self._password = password  # Pulls in password to be checked
+        self._errors.clear()  # Clears all stored errors
 
-        self._errors.clear()
-
-        try:
+        try:  # Tests password for if it is between 8 and 12 characters
             self.__validate_length()
-        except PasswordException as e:
+        except PasswordException as e:  # Stores error to be pulled by get_errors
             self._errors.append(e)
 
         if len(self._errors) == 0:
