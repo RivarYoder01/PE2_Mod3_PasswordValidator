@@ -83,7 +83,10 @@ def advanced_validator():
 
     # Modify as needed while testing, delete this comment line before turn in -RY
     passwords = ("AAaa11!!", "Abb12!!", "AAb12!", "AAbb1", "AAbb12!", "b!", "bb", "AAbb!!12", "AAbb!!12121212")
-    pv = AdvPasswordValidator()  # Runs the above password examples through the validator, pushing back as pv
+    # Test
+    symbol_list = ['@', '_', '!', '#', '$', '%', '&', '*', '?', '~']
+    pv = AdvPasswordValidator(symbol_list=symbol_list)
+    # pv = AdvPasswordValidator()  # Runs the above password examples through the validator, pushing back as pv
 
     for p in passwords:  # Loops through each password to let the user know that password is valid
         if pv.is_valid(p):
