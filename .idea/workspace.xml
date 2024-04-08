@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="851f73a8-29a3-4ce5-bb39-f8a2478abb05" name="Changes" comment="Got validate uppercase to work">
+    <list default="true" id="851f73a8-29a3-4ce5-bb39-f8a2478abb05" name="Changes" comment="Got advanced_validator to run and validate_length to work in adv_pwd_validator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adv_pwd_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/adv_pwd_validator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/password_tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_tester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_validator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712243934158</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Got advanced_validator to run and validate_length to work in adv_pwd_validator">
+      <option name="closed" value="true" />
+      <created>1712443997450</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712443997450</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -178,6 +184,7 @@
     <MESSAGE value="Corrected the password_tester to be nearly functional. Line 42 has an attribute error. Coded the lowercase validation and is_valid in password_validator and Password Exception in password_exception" />
     <MESSAGE value="Got validate lowercase functional with a message" />
     <MESSAGE value="Got validate uppercase to work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got validate uppercase to work" />
+    <MESSAGE value="Got advanced_validator to run and validate_length to work in adv_pwd_validator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got advanced_validator to run and validate_length to work in adv_pwd_validator" />
   </component>
 </project>
