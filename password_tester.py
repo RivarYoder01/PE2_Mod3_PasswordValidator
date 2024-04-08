@@ -20,21 +20,23 @@ __version__ = '1.0'
 __date__ = '4/8/2024'
 __status__ = 'Development'
 
-from password_validator import PasswordValidator
-from adv_pwd_validator import AdvPasswordValidator
+from password_validator import PasswordValidator  # For use in default_validator
+from adv_pwd_validator import AdvPasswordValidator  # For use in advanced_validator
 
-DASH_LENGTH = 70
+DASH_LENGTH = 50
 
 
 def display_errors(self):
     """
-    Recei
+    Receives each successful password to display that a password failed the validator, runs a for loop to pull and
+    display all errors found
+
     :param self:
     :return:
     """
     print(f'{self} is an invalid password')
 
-    for e in self.get_errors():
+    for e in self.get_errors():  # Pulls exact errors from password_validator and adv_pwd_validator
         print(e)
 
 
@@ -45,7 +47,8 @@ def default_validator():
     """
     print('=' * DASH_LENGTH)
     print('Default Validator')
-    print('Testing Passwords AAaa11!!, Abb12!!, AAb12!, AAbb1, AAbb12!, b!, bb')
+    print('Testing The Following Passwords:')
+    print('AAaa11!!, Abb12!!, AAb12!, AAbb1, AAbb12!, b!, bb')
     print('=' * DASH_LENGTH)
     print()
 
@@ -63,27 +66,32 @@ def default_validator():
 
 def advanced_validator():
     """
+    Runs an extended list of passwords to test the previous conditions as well as the new length and specific character
+    conditions.
 
     :return:
     """
 
+    # Interface header to enhance readability
     print('=' * DASH_LENGTH)
-    print('Advanced Validator')  # Modify as needed while testing, delete this comment line before turn in -RY
-    print('Testing Passwords AAaa11!!, Abb12!!, AAb12!, AAbb1, AAbb12!, b!, bb, AAbb!!12, AAbb!!12121212')
+    print('Advanced Validator')
+    print('Testing The Following Passwords')
+    print('AAaa11!!, Abb12!!, AAb12!, AAbb1, AAbb12!, b!, bb,')
+    print('AAbb!!12, AAbb!!12121212')  # Modify as needed while testing, delete this comment line before turn in -RY
     print('=' * DASH_LENGTH)
     print()
 
     # Modify as needed while testing, delete this comment line before turn in -RY
     passwords = ("AAaa11!!", "Abb12!!", "AAb12!", "AAbb1", "AAbb12!", "b!", "bb", "AAbb!!12", "AAbb!!12121212")
-    pv = AdvPasswordValidator()
+    pv = AdvPasswordValidator()  # Runs the above password examples through the validator, pushing back as pv
 
-    for p in passwords:
+    for p in passwords:  # Loops through each password to let the user know that password is valid
         if pv.is_valid(p):
             print(f'{pv} is a valid password')
-        else:
+        else:  # If a password is not valid
             display_errors(pv)
 
-        print()
+        print()  # Empty space between passwords
 
 
 if __name__ == '__main__':
