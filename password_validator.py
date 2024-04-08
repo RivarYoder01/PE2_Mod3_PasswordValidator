@@ -91,16 +91,16 @@ class PasswordValidator:
         """
 
         self._password = password
-        self._errors.clear()
+        self._errors.clear()  # Clears all stored errors
 
-        try:  # Tests password for if it contains at least two lower case letters
+        try:  # Tests password for if it contains at least two lowercase letters
             self.__validate_lowercase()
-        except PasswordException as e:
+        except PasswordException as e:  # Stores error to be pulled by get_errors
             self._errors.append(e)
 
-        try:
+        try:  # Tests password for if it contains at least two uppercase letters
             self.__validate_uppercase()
-        except PasswordException as e:
+        except PasswordException as e:  # Stores error to be pulled by get_errors
             self._errors.append(e)
 
         try:
@@ -113,7 +113,7 @@ class PasswordValidator:
         except PasswordException as e:
             self._errors.append(e)
 
-        if len(self._errors) == 0:
+        if len(self._errors) == 0:  #
             return True
         else:
             return False
