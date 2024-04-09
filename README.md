@@ -24,6 +24,9 @@ A variety of password options are passed throguh a default validator and an adva
 * Maximum Length- 12
 * Can only use Symbols- '@', '_', '!', '#', '$', '%', '&', '*', '?', '~'
 
+**Console Output**
+(INSERT RAD AND TOTALLY WORKING CODE HERE)
+
 ‐------------------‐----------------------------------------------------------
 ### **What was Learned:**
 * Object Oriented Programming(OOP)
