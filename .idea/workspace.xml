@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="851f73a8-29a3-4ce5-bb39-f8a2478abb05" name="Changes" comment="Comments push 2">
+    <list default="true" id="851f73a8-29a3-4ce5-bb39-f8a2478abb05" name="Changes" comment="Comments push 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adv_pwd_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/adv_pwd_validator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password_tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_tester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_validator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712544150349</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Comments push 3">
+      <option name="closed" value="true" />
+      <created>1712548664554</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712548664554</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -213,6 +218,7 @@
     <MESSAGE value="Got advanced_validator to run and validate_length to work in adv_pwd_validator" />
     <MESSAGE value="Comments push 1" />
     <MESSAGE value="Comments push 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments push 2" />
+    <MESSAGE value="Comments push 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments push 3" />
   </component>
 </project>
