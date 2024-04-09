@@ -3,14 +3,12 @@ from password_validator import PasswordValidator
 
 
 class AdvPasswordValidator(PasswordValidator):
-    def __init__(self, char_min=8, char_max=12, symbol_list=None, advanced_validation=True):
+    def __init__(self, char_min=8, char_max=12):
         """
         Defines the minimum and maximum character limit and which symbols can be used
 
         :param char_min:
         :param char_max:
-        :param symbol_list:
-        :param advanced_validation
         """
 
         super().__init__()
@@ -20,9 +18,7 @@ class AdvPasswordValidator(PasswordValidator):
         # assigns each parameter to objects that are attached to self
         self._char_min = char_min
         self._char_max = char_max
-        self._symbol_list = symbol_list if symbol_list else []
-        self._advanced_validation = advanced_validation     # Possible solution to override the old symbol validation
-        # Another solution: only inherit everything but validate_symbols
+        self._symbol_list = ['@', '_', '!', '#', '$', '%', '&', '*', '?', '~']
 
     def get_errors(self):
         return self._errors
@@ -55,7 +51,7 @@ class AdvPasswordValidator(PasswordValidator):
             raise PasswordException(error, self._password)
 
     def __validate_specific_symbol(self):
-        symbol_list = ['@', '_', '!', '#', '$', '%', '&', '*', '?', '~']
+        # symbol_list = ['@', '_', '!', '#', '$', '%', '&', '*', '?', '~']
 
         symbol_count = sum(1 for char in self._password if char in self._symbol_list)
         if symbol_count < 2:
@@ -80,21 +76,13 @@ class AdvPasswordValidator(PasswordValidator):
         except PasswordException as e:  # Stores error to be pulled by get_errors
             self._errors.append(e)
 
-        if self._advanced_validation:  # Run advanced validations if enabled
-            try:
-                self.__validate_specific_symbol()  # Override symbol validation
-            except PasswordException as e:
-                self._errors.append(e)
-        else:  # Run superclass validations if advanced validation is not enabled
-            try:
-                super().__validate_symbols()  # Use superclass symbol validation
-            except PasswordException as e:
-                self._errors.append(e)
+        try:
+            self.__validate_specific_symbol()  # Override symbol validation
+        except PasswordException as e:
+            self._errors.append(e)
 
-        # try:  # Tests password for if it contains at least two uppercase letters
-        #     self.__validate_specific_symbol()
-        # except PasswordException as e:  # Stores error to be pulled by get_errors
-        #     self._errors.append(e)
+        # I'm almost positive this is how to inherit the validators from password_validator but when it's used it only
+        # uses the validators that are inherited instead of using them with the new validators added
 
         # # Inherit and run validation rules from PasswordValidator
         # if not super().is_valid(password):
