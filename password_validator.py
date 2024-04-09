@@ -68,8 +68,8 @@ class PasswordValidator:
 
     def __validate_digit(self):
         """
-
-        :return:
+        Tracks how many digits are used in the password using char_count and makes sure at least 2 digits are used.
+        :return: None
         """
 
         char_count = sum(1 for char in self._password if char.isnumeric() and char.isnumeric())
@@ -80,10 +80,11 @@ class PasswordValidator:
 
     def __validate_symbols(self):
         """
-
+        Tracks how many non-alphanumeric characters (any symbols) are used in the password using char_count
+        and makes sure that the password uses at least 2
         Asked ChatGPT to see how we can check for a symbol.
         https://chat.openai.com/share/14f25fec-41c0-4999-b1c4-7619f03f52a6
-        :return:
+        :return:None
         """
 
         char_count = sum(1 for char in self._password if not char.isalnum())

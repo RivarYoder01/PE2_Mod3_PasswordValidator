@@ -51,7 +51,11 @@ class AdvPasswordValidator(PasswordValidator):
             raise PasswordException(error, self._password)
 
     def __validate_specific_symbol(self):
-        # symbol_list = ['@', '_', '!', '#', '$', '%', '&', '*', '?', '~']
+        """
+        Adds a list of specific symbols that will be allowed instead of any non-alphanumeric characters that the base
+        symbol validator uses.
+        :return: None
+        """
 
         symbol_count = sum(1 for char in self._password if char in self._symbol_list)
         if symbol_count < 2:
@@ -87,6 +91,9 @@ class AdvPasswordValidator(PasswordValidator):
         # # Inherit and run validation rules from PasswordValidator
         # if not super().is_valid(password):
         #     self._errors.extend(super().get_errors())
+
+        # If this code above is not commented it will only use the validators from password_validation and wont check
+        # the advanced password validators
 
         if len(self._errors) == 0:
             return True
