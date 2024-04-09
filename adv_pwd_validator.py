@@ -63,7 +63,7 @@ class AdvPasswordValidator(PasswordValidator):
     def __validate_specific_symbol(self):
         """
         Adds a list of specific symbols that will be allowed instead of any non-alphanumeric characters that the base
-        symbol validator uses.
+        symbol validator uses
         :return: None
         """
 

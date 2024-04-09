@@ -29,7 +29,7 @@ DASH_LENGTH = 50
 def display_errors(self):
     """
     Receives each successful password to display that a password failed the validator, runs a for loop to pull and
-    display all errors found
+    display all errors found.
 
     :param self: An instance of the password validator
     :return: None
