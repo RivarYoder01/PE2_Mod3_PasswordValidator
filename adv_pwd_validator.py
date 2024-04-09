@@ -3,23 +3,28 @@ from password_validator import PasswordValidator
 
 
 class AdvPasswordValidator(PasswordValidator):
-    def __init__(self, char_min=8, char_max=12, min_symbols=2):
+    def __init__(self, lowercase_min=2, uppercase_min=2, digit_min=2,
+                 char_min=8, char_max=12, symbol_min=2, valid_symbols=('@', '_', '!', '#', '$', '%', '&', '*', '?', '~')):
         """
         Defines the minimum and maximum character limit and which symbols can be used
 
+        :param lowercase_min:
+        :param uppercase_min:
+        :param digit_min:
         :param char_min:
         :param char_max:
+        :param symbol_min:
+        :param valid_symbols:
         """
 
-        super().__init__()
+        super().__init__(lowercase_min, uppercase_min, digit_min, symbol_min)
         self._password = None
         self._errors = []  # Empty list that will store the errors found
 
         # assigns each parameter to objects that are attached to self
         self._char_min = char_min
         self._char_max = char_max
-        self._min_symbols = min_symbols
-        self._symbol_list = ['@', '_', '!', '#', '$', '%', '&', '*', '?', '~']
+        self._valid_symbols = valid_symbols
 
     def get_errors(self):
         return self._errors
@@ -58,11 +63,11 @@ class AdvPasswordValidator(PasswordValidator):
         :return: None
         """
 
-        symbol_count = sum(1 for char in self._password if char in self._symbol_list)
+        symbol_count = sum(1 for char in self._password if char in self._valid_symbols)
 
-        if symbol_count < self._min_symbols:
+        if symbol_count < self._symbol_min:
             error = (f"Contains {symbol_count} symbol(s). Requires at least 2 symbols from the provided list: "
-                     f"{self._symbol_list}")
+                     f"{self._valid_symbols}")
             raise PasswordException(error, self._password)
 
     def is_valid(self, password):
@@ -74,8 +79,11 @@ class AdvPasswordValidator(PasswordValidator):
         :return:
         """
 
-        self._password = password  # Pulls in password to be checked
-        self._errors.clear()  # Clears all stored errors
+        # Should finally work!
+        # Inherit and run validation rules from PasswordValidator
+        super_result = super().is_valid(password)
+        if not super_result:
+            self._errors.extend(super().get_errors())
 
         try:  # Tests password for if it is between 8 and 12 characters
             self.__validate_length()
@@ -87,15 +95,9 @@ class AdvPasswordValidator(PasswordValidator):
         except PasswordException as e:
             self._errors.append(e)
 
-        # I'm almost positive this is how to inherit the validators from password_validator but when it's used it only
-        # uses the validators that are inherited instead of using them with the new validators added
-
-        # # Inherit and run validation rules from PasswordValidator
-        # if not super().is_valid(password):
-        #     self._errors.extend(super().get_errors())
-
-        # If this code above is not commented it will only use the validators from password_validation and wont check
-        # the advanced password validators
+        # Added this to delete duplicate error messages because for some reason the base validator error messages
+        # would print twice
+        self._errors = list(set(self._errors))
 
         if len(self._errors) == 0:
             return True
