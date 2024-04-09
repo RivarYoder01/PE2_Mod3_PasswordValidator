@@ -3,7 +3,7 @@ from password_validator import PasswordValidator
 
 
 class AdvPasswordValidator(PasswordValidator):
-    def __init__(self, char_min=8, char_max=12):
+    def __init__(self, char_min=8, char_max=12, min_symbols=2):
         """
         Defines the minimum and maximum character limit and which symbols can be used
 
@@ -18,6 +18,7 @@ class AdvPasswordValidator(PasswordValidator):
         # assigns each parameter to objects that are attached to self
         self._char_min = char_min
         self._char_max = char_max
+        self._min_symbols = min_symbols
         self._symbol_list = ['@', '_', '!', '#', '$', '%', '&', '*', '?', '~']
 
     def get_errors(self):
@@ -58,7 +59,8 @@ class AdvPasswordValidator(PasswordValidator):
         """
 
         symbol_count = sum(1 for char in self._password if char in self._symbol_list)
-        if symbol_count < 2:
+
+        if symbol_count < self._min_symbols:
             error = (f"Contains {symbol_count} symbol(s). Requires at least 2 symbols from the provided list: "
                      f"{self._symbol_list}")
             raise PasswordException(error, self._password)
@@ -81,7 +83,7 @@ class AdvPasswordValidator(PasswordValidator):
             self._errors.append(e)
 
         try:
-            self.__validate_specific_symbol()  # Override symbol validation
+            self.__validate_specific_symbol()
         except PasswordException as e:
             self._errors.append(e)
 
