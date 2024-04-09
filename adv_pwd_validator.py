@@ -8,13 +8,13 @@ class AdvPasswordValidator(PasswordValidator):
         """
         Defines the minimum and maximum character limit and which symbols can be used
 
-        :param lowercase_min:
-        :param uppercase_min:
-        :param digit_min:
-        :param char_min:
-        :param char_max:
-        :param symbol_min:
-        :param valid_symbols:
+        :param lowercase_min: Minimum number of lowercase letters needed
+        :param uppercase_min: Minimum number of uppercase letters needed
+        :param digit_min: Minimum number of digits needed
+        :param char_min: Minimum password length
+        :param char_max: Maximum password length
+        :param symbol_min: Minimum number of symbols needed
+        :param valid_symbols: Valid symbols that can be used in passwords
         """
 
         super().__init__(lowercase_min, uppercase_min, digit_min, symbol_min)
@@ -27,13 +27,17 @@ class AdvPasswordValidator(PasswordValidator):
         self._valid_symbols = valid_symbols
 
     def get_errors(self):
+        """
+        Gets the list of errors that was created during password validation
+        :return: List of error messages
+        """
         return self._errors
 
     def __str__(self):
         """
         Coverts password into a string
 
-        :return:
+        :return: A string representation of the password
         """
         return self._password
 
@@ -43,7 +47,7 @@ class AdvPasswordValidator(PasswordValidator):
         custom minimum limit error is thrown. If there are LESS than 8 characters then a custom maximum limit error
         is thrown.
 
-        :return:
+        :return: None
         """
 
         char_count = len(self._password)
@@ -75,8 +79,8 @@ class AdvPasswordValidator(PasswordValidator):
         Runs each subclass above to check each parameter using a series of try excepts. If returned false, the error
         will be stored.
 
-        :param password:
-        :return:
+        :param password: The password to be validated
+        :return: True if the password is valid, otherwise false
         """
 
         # Should finally work!
