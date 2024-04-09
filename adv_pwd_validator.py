@@ -4,7 +4,8 @@ from password_validator import PasswordValidator
 
 class AdvPasswordValidator(PasswordValidator):
     def __init__(self, lowercase_min=2, uppercase_min=2, digit_min=2,
-                 char_min=8, char_max=12, symbol_min=2, valid_symbols=('@', '_', '!', '#', '$', '%', '&', '*', '?', '~')):
+                 char_min=8, char_max=12, symbol_min=2, valid_symbols=('@', '_', '!', '#', '$', '%', '&', '*', '?', '~')
+                 ):
         """
         Defines the minimum and maximum character limit and which symbols can be used
 
@@ -25,21 +26,6 @@ class AdvPasswordValidator(PasswordValidator):
         self._char_min = char_min
         self._char_max = char_max
         self._valid_symbols = valid_symbols
-
-    def get_errors(self):
-        """
-        Gets the list of errors that was created during password validation
-        :return: List of error messages
-        """
-        return self._errors
-
-    def __str__(self):
-        """
-        Coverts password into a string
-
-        :return: A string representation of the password
-        """
-        return self._password
 
     def __validate_length(self):
         """
