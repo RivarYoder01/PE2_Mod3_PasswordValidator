@@ -6,10 +6,10 @@ class PasswordValidator:
         """
         Defines the parameters used to validate the passwords being passed through
 
-        :param lowercase_min:
-        :param uppercase_min:
-        :param digit_min:
-        :param symbol_min:
+        :param lowercase_min: Minimum number of lowercase letters needed
+        :param uppercase_min: Minimum number of uppercase letters needed
+        :param digit_min: Minimum number of digits needed
+        :param symbol_min: minimum number of symbols needed
         """
 
         self._password = None
@@ -23,8 +23,8 @@ class PasswordValidator:
 
     def get_errors(self):
         """
-
-        :return:
+        Gets the list of errors that was created during password validation
+        :return: List of error messages
         """
         return self._errors
 
@@ -32,7 +32,7 @@ class PasswordValidator:
         """
         Coverts password into a string
 
-        :return:
+        :return: A string representation of the password
         """
         return self._password
 
@@ -41,7 +41,7 @@ class PasswordValidator:
         char_count is used to track how many letters are lowercase. A for loop checks each letter and adds 1 to
         char_count for every instance. If there are less than 2 lowercase letters then a custom error is thrown.
 
-        :return:
+        :return: None
         """
 
         # Adds 1 to each char in self._password if a character is alpha AND lowercase. Tracks the instances of this.
@@ -56,7 +56,7 @@ class PasswordValidator:
         char_count is used to track how many letters are uppercase. A for loop checks each letter and adds 1 to
         char_count for every instance. If there are less than 2 uppercase letters then a custom error is thrown.
 
-        :return:
+        :return: None
         """
 
         # Adds 1 to each char in self._password if a character is alpha AND uppercase. Tracks the instances of this.
@@ -98,8 +98,8 @@ class PasswordValidator:
         Runs each subclass above to check each parameter using a series of try excepts. If returned false, the error
         will be stored.
 
-        :param password:
-        :return:
+        :param password: Password to be validated
+        :return: True if the password is valid, otherwise false
         """
 
         self._password = password  # Pulls in password to be checked
