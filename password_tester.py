@@ -31,8 +31,8 @@ def display_errors(self):
     Receives each successful password to display that a password failed the validator, runs a for loop to pull and
     display all errors found
 
-    :param self:
-    :return:
+    :param self: An instance of the password validator
+    :return: None
     """
     print(f'{self} is an invalid password')
 
@@ -42,8 +42,9 @@ def display_errors(self):
 
 def default_validator():
     """
+    Validates a set of passwords using the default password validator
 
-    :return:
+    :return: None
     """
     print('=' * DASH_LENGTH)
     print('Default Validator')
@@ -69,7 +70,7 @@ def advanced_validator():
     Runs an extended list of passwords to test the previous conditions as well as the new length and specific character
     conditions.
 
-    :return:
+    :return: None
     """
 
     # Interface header to enhance readability
@@ -77,12 +78,11 @@ def advanced_validator():
     print('Advanced Validator')
     print('Testing The Following Passwords')
     print('AAaa11!!, Abb12!!, AAb12!, AAbb1, AAbb12!, b!, bb,')
-    print('AAbb!!12, AAbb!!12121212')  # Modify as needed while testing, delete this comment line before turn in -RY
+    print('AAbb!(12, AAbb!!12121212')  # Added illegal symbol to test validate_specific_symbol
     print('=' * DASH_LENGTH)
     print()
 
-    # Modify as needed while testing, delete this comment line before turn in -RY
-    passwords = ("AAaa11!!", "Abb12!!", "AAb12!", "AAbb1", "AAbb12!", "b!", "bb", "AAbb!!12", "AAbb!!12121212")
+    passwords = ("AAaa11!!", "Abb12!!", "AAb12!", "AAbb1", "AAbb12!", "b!", "bb", "AAbb!(12", "AAbb!!12121212")
     pv = AdvPasswordValidator()  # Runs the above password examples through the validator, pushing back as pv
 
     for p in passwords:  # Loops through each password to let the user know that password is valid

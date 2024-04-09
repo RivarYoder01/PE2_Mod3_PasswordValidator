@@ -70,7 +70,7 @@ class AdvPasswordValidator(PasswordValidator):
         symbol_count = sum(1 for char in self._password if char in self._valid_symbols)
 
         if symbol_count < self._symbol_min:
-            error = (f"Contains {symbol_count} symbol(s). Requires at least 2 symbols from the provided list: "
+            error = (f"Contains {symbol_count} valid symbol(s). Requires at least 2 symbols from the provided list: "
                      f"{self._valid_symbols}")
             raise PasswordException(error, self._password)
 
